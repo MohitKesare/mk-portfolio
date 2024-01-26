@@ -2,32 +2,165 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@900&family=Inconsolata:wght@900&display=swap");
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 244 100% 8.8%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.numbers {
+  color: #44af9f;
+}
+.nav-elements {
+  color: #8993b0;
+  margin-left: 3px;
+}
+.re_btn {
+  color: #44af9f;
+  border-color: #44af9f;
+}
+.sp_place {
+  width: fit-content;
+  height: fit-content;
+  /* border: 1px solid red; */
+  margin: auto;
+}
+.intro_container {
+  width: fit-content;
+  /* border: 1px solid green; */
+}
+.intro_line_1 {
+  font-family: "Roboto Mono", monospace;
+  color: #44af9f;
+  font-weight: bolder;
+}
+.intro_line_2 {
+  font-family: "Inconsolata", monospace;
+  font-size: 80px;
+  font-weight: 900;
+}
+.intro_line_3 {
+  font-family: "Inconsolata", monospace;
+  font-size: 65px;
+  font-weight: 900;
+  color: #8993b0;
+}
+.intro_para {
+  font-family: "Inconsolata", monospace;
+  color: #8993b0;
+  margin-top: 3vh;
+}
+.sp_font {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 700;
+  font-size: 20px;
+}
+.para {
+  width: 70vw;
+  /* border: 1px solid red; */
+}
+
+@media screen and (max-width: 1050px) {
+  .intro_line_2 {
+    font-size: 70px;
+  }
+  .intro_container {
+    margin-left: 10vh;
+  }
+}
+@media screen and (max-width: 650px) {
+  .intro_line_2 {
+    font-size: 50px;
+  }
+  .intro_line_3 {
+    font-size: 40px;
+  }
+  .sp_font {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .intro_container {
+    margin-left: 5vh;
+  }
+  .intro_line_2 {
+    font-size: 35px;
+  }
+  .intro_line_3 {
+    font-size: 30px;
+  }
+  .sp_font {
+    font-size: 10px;
   }
 }
